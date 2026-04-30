@@ -264,3 +264,58 @@
 **Context**: Code Generation - Unit 1 common-foundation. All steps completed.
 
 ---
+
+## CONSTRUCTION - Functional Design Start (Unit 3: menu-domain)
+**Timestamp**: 2026-04-30T15:15:00Z
+**User Input**: "가보자" (Unit 3 menu-domain Construction Phase 시작 승인)
+**AI Response**: Unit 3 menu-domain Construction Phase 시작. Functional Design 단계 진행.
+**Context**: Construction Phase - Functional Design (Unit 3: menu-domain)
+
+---
+
+## CONSTRUCTION - Functional Design Approval (Unit 3: menu-domain)
+**Timestamp**: 2026-04-30T15:25:00Z
+**User Input**: "승인"
+**AI Response**: Functional Design 승인 완료. NFR Requirements 단계로 진행.
+**Context**: Construction Phase - Functional Design Approved (Unit 3: menu-domain)
+
+---
+
+## CONSTRUCTION - NFR Requirements Approval (Unit 3: menu-domain)
+**Timestamp**: 2026-04-30T15:30:00Z
+**User Input**: "승인"
+**AI Response**: NFR Requirements 승인 완료. NFR Design 단계로 진행.
+**Context**: Construction Phase - NFR Requirements Approved (Unit 3: menu-domain)
+
+---
+
+## CONSTRUCTION - NFR Design Approval (Unit 3: menu-domain)
+**Timestamp**: 2026-04-30T15:35:00Z
+**User Input**: "승인"
+**AI Response**: NFR Design 승인 완료. Code Generation 단계로 진행.
+**Context**: Construction Phase - NFR Design Approved (Unit 3: menu-domain)
+
+---
+
+## CONSTRUCTION - Code Generation Plan (Unit 3: menu-domain)
+**Timestamp**: 2026-04-30T15:40:00Z
+**AI Response**: Code Generation Plan 생성 완료. 10개 Step, Repository → Service → Controller 순서로 구현. 모든 레이어에 단위 테스트 포함.
+**Context**: Construction Phase - Code Generation Part 1 Planning (Unit 3: menu-domain)
+
+---
+
+## CONSTRUCTION - Code Generation Plan Approval (Unit 3: menu-domain)
+**Timestamp**: 2026-04-30T15:42:00Z
+**User Input**: "승인"
+**AI Response**: Code Generation Plan 승인 완료. Part 2 Generation 시작.
+**Context**: Construction Phase - Code Generation Part 1 Approved (Unit 3: menu-domain)
+
+---
+
+## CONSTRUCTION - Code Generation Approval (Unit 3: menu-domain)
+**Timestamp**: 2026-04-30T15:55:00Z
+**User Input**: "승인"
+**AI Response**: Code Generation 승인 완료. Unit 3 menu-domain Construction Phase 전체 완료.
+**Context**: Construction Phase - Code Generation Approved (Unit 3: menu-domain)
+
+---
