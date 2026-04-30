@@ -38,17 +38,18 @@ public class SecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .headers(headers -> headers
                         .contentTypeOptions(contentTypeOptions -> {})
-                        .frameOptions(frameOptions -> frameOptions.deny())
+                        .frameOptions(frameOptions -> frameOptions.sameOrigin())
                         .httpStrictTransportSecurity(hsts -> hsts
                                 .maxAgeInSeconds(31536000)
                                 .includeSubDomains(true))
                         .referrerPolicy(referrer -> referrer
                                 .policy(ReferrerPolicyHeaderWriter.ReferrerPolicy.STRICT_ORIGIN_WHEN_CROSS_ORIGIN))
                         .contentSecurityPolicy(csp -> csp
-                                .policyDirectives("default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;")))
+                                .policyDirectives("default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;")))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.POST, "/api/tables/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/admin/login").permitAll()
+                        .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/static/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/customer/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/admin/**").permitAll()
