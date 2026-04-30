@@ -37,30 +37,30 @@ INSERT INTO categories (store_id, name, display_order) VALUES (1, '사이드 메
 INSERT INTO categories (store_id, name, display_order) VALUES (1, '음료', 3) ON CONFLICT DO NOTHING;
 
 -- 메뉴
-INSERT INTO menus (store_id, category_id, name, price, description, display_order)
-SELECT 1, 1, '김치찌개', 9000, '깊은 맛의 전통 김치찌개', 1
+INSERT INTO menus (store_id, category_id, name, price, description, image_url, display_order)
+SELECT 1, 1, '김치찌개', 9000, '깊은 맛의 전통 김치찌개', '/images/kimchi-jjigae.svg', 1
 WHERE NOT EXISTS (SELECT 1 FROM menus WHERE store_id = 1 AND name = '김치찌개');
 
-INSERT INTO menus (store_id, category_id, name, price, description, display_order)
-SELECT 1, 1, '된장찌개', 8000, '구수한 된장찌개', 2
+INSERT INTO menus (store_id, category_id, name, price, description, image_url, display_order)
+SELECT 1, 1, '된장찌개', 8000, '구수한 된장찌개', '/images/doenjang-jjigae.svg', 2
 WHERE NOT EXISTS (SELECT 1 FROM menus WHERE store_id = 1 AND name = '된장찌개');
 
-INSERT INTO menus (store_id, category_id, name, price, description, display_order)
-SELECT 1, 1, '불고기', 15000, '달콤한 양념 불고기', 3
+INSERT INTO menus (store_id, category_id, name, price, description, image_url, display_order)
+SELECT 1, 1, '불고기', 15000, '달콤한 양념 불고기', '/images/bulgogi.svg', 3
 WHERE NOT EXISTS (SELECT 1 FROM menus WHERE store_id = 1 AND name = '불고기');
 
-INSERT INTO menus (store_id, category_id, name, price, description, display_order)
-SELECT 1, 2, '계란말이', 7000, '부드러운 계란말이', 1
+INSERT INTO menus (store_id, category_id, name, price, description, image_url, display_order)
+SELECT 1, 2, '계란말이', 7000, '부드러운 계란말이', '/images/gyeran-mari.svg', 1
 WHERE NOT EXISTS (SELECT 1 FROM menus WHERE store_id = 1 AND name = '계란말이');
 
-INSERT INTO menus (store_id, category_id, name, price, description, display_order)
-SELECT 1, 2, '감자전', 6000, '바삭한 감자전', 2
+INSERT INTO menus (store_id, category_id, name, price, description, image_url, display_order)
+SELECT 1, 2, '감자전', 6000, '바삭한 감자전', '/images/gamja-jeon.svg', 2
 WHERE NOT EXISTS (SELECT 1 FROM menus WHERE store_id = 1 AND name = '감자전');
 
-INSERT INTO menus (store_id, category_id, name, price, description, display_order)
-SELECT 1, 3, '콜라', 2000, '시원한 콜라', 1
+INSERT INTO menus (store_id, category_id, name, price, description, image_url, display_order)
+SELECT 1, 3, '콜라', 2000, '시원한 콜라', '/images/cola.svg', 1
 WHERE NOT EXISTS (SELECT 1 FROM menus WHERE store_id = 1 AND name = '콜라');
 
-INSERT INTO menus (store_id, category_id, name, price, description, display_order)
-SELECT 1, 3, '사이다', 2000, '청량한 사이다', 2
+INSERT INTO menus (store_id, category_id, name, price, description, image_url, display_order)
+SELECT 1, 3, '사이다', 2000, '청량한 사이다', '/images/cider.svg', 2
 WHERE NOT EXISTS (SELECT 1 FROM menus WHERE store_id = 1 AND name = '사이다');

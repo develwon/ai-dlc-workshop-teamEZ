@@ -18,6 +18,15 @@ spring:
       mode: always
       schema-locations: classpath:schema.sql
       data-locations: classpath:data.sql
+      encoding: UTF-8
+
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      force-response: true
 
 jwt:
   secret: bG9jYWxEZXZlbG9wbWVudFNlY3JldEtleUZvclRlc3RpbmdPbmx5MTIzNDU2Nzg5MA==
