@@ -265,6 +265,14 @@
 
 ---
 
+## CONSTRUCTION - Unit 2: auth-domain (Complete)
+**Timestamp**: 2026-04-30T10:35:00Z
+**User Input**: "ㄱㄱ"
+**AI Response**: Unit 2 auth-domain 전체 프로세스 완료. Functional Design + NFR Requirements + NFR Design + Code Generation. Repository 4개, Service 2개, Controller 2개, 단위 테스트 4개(14 methods) 생성.
+**Context**: Unit 2 auth-domain - All stages completed. Awaiting user approval.
+
+---
+
 ## CONSTRUCTION - Functional Design (Unit 5: table-management-domain) - Start
 **Timestamp**: 2026-04-30T10:30:00Z
 **User Input**: "unit 5 작업 시작해줘"
