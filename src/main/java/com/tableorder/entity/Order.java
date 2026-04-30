@@ -40,6 +40,9 @@ public class Order extends BaseEntity {
     @Column(name = "status", nullable = false)
     private OrderStatus status = OrderStatus.PENDING;
 
+    @Column(name = "deleted", nullable = false)
+    private Boolean deleted = false;
+
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> orderItems = new ArrayList<>();
 
@@ -52,6 +55,15 @@ public class Order extends BaseEntity {
         this.orderNumber = orderNumber;
         this.totalAmount = totalAmount;
         this.status = OrderStatus.PENDING;
+        this.deleted = false;
+    }
+
+    public void softDelete() {
+        this.deleted = true;
+    }
+
+    public boolean isDeleted() {
+        return Boolean.TRUE.equals(this.deleted);
     }
 
     public void updateStatus(OrderStatus newStatus) {

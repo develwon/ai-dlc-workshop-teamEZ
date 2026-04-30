@@ -33,4 +33,8 @@ public class StoreTable extends BaseEntity {
         this.tableNumber = tableNumber;
         this.passwordHash = passwordHash;
     }
+
+    public void updatePassword(String newPasswordHash) {
+        this.passwordHash = newPasswordHash;
+    }
 }

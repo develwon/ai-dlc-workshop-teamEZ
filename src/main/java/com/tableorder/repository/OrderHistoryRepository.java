@@ -12,6 +12,9 @@ public interface OrderHistoryRepository extends JpaRepository<OrderHistory, Long
 
     List<OrderHistory> findByTableIdOrderByCompletedAtDesc(Long tableId);
 
+    List<OrderHistory> findByTableIdAndOrderedAtBetweenOrderByOrderedAtDesc(
+            Long tableId, LocalDateTime start, LocalDateTime end);
+
     List<OrderHistory> findByTableIdAndCompletedAtBetweenOrderByCompletedAtDesc(
             Long tableId, LocalDateTime start, LocalDateTime end);
 
