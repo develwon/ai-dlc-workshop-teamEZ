@@ -12,7 +12,7 @@ export async function submitOrder() {
     const response = await api.createOrder(
         auth.storeId,
         auth.tableId,
-        auth.sessionId,
+        null,
         items
     );
 
