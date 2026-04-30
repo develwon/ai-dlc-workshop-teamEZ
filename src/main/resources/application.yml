@@ -1,0 +1,65 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tableorder
+    username: ${DB_USERNAME:tableorder}
+    password: ${DB_PASSWORD:tableorder}
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 30
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 100
+        jdbc:
+          time_zone: UTC
+    open-in-view: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+
+jwt:
+  secret: ${JWT_SECRET:defaultSecretKeyForDevelopmentOnlyMustBeAtLeast256BitsLong!!}
+  expiration: 57600000
+
+aws:
+  s3:
+    bucket: ${S3_BUCKET_NAME:table-order-images}
+    region: ${AWS_REGION:ap-northeast-2}
+
+app:
+  security:
+    max-login-attempts: 5
+    lock-duration-minutes: 30
+  sse:
+    timeout: 1800000
+    heartbeat-interval: 15000
+    max-emitters-per-store: 10
+
+logging:
+  level:
+    root: INFO
+    com.tableorder: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [%X{requestId}] %-5level %logger{36} - %msg%n"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
