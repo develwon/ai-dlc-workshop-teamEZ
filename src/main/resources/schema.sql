@@ -70,6 +70,7 @@ CREATE TABLE IF NOT EXISTS orders (
     order_number VARCHAR(20) NOT NULL UNIQUE,
     total_amount INTEGER NOT NULL,
     status VARCHAR(20) NOT NULL DEFAULT 'PENDING',
+    deleted BOOLEAN NOT NULL DEFAULT false,
     created_at TIMESTAMP NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
@@ -107,3 +108,6 @@ CREATE INDEX IF NOT EXISTS idx_orders_session_created ON orders(session_id, crea
 CREATE INDEX IF NOT EXISTS idx_orders_store_status_created ON orders(store_id, status, created_at);
 CREATE INDEX IF NOT EXISTS idx_order_items_order ON order_items(order_id);
 CREATE INDEX IF NOT EXISTS idx_order_history_table_completed ON order_history(table_id, completed_at);
+CREATE INDEX IF NOT EXISTS idx_orders_session_deleted ON orders(session_id, deleted);
+CREATE INDEX IF NOT EXISTS idx_orders_store_deleted_status ON orders(store_id, deleted, status);
+CREATE INDEX IF NOT EXISTS idx_order_history_table_ordered ON order_history(table_id, ordered_at);

@@ -264,3 +264,94 @@
 **Context**: Code Generation - Unit 1 common-foundation. All steps completed.
 
 ---
+
+## CONSTRUCTION - Functional Design (Unit 5: table-management-domain) - Start
+**Timestamp**: 2026-04-30T10:30:00Z
+**User Input**: "unit 5 작업 시작해줘"
+**AI Response**: Unit 5 (table-management-domain) Construction Phase 시작. Functional Design Plan 생성 및 질문 파일 작성.
+**Context**: Construction Phase - Functional Design 시작
+
+---
+
+## CONSTRUCTION - Functional Design (Unit 5) - Questions
+**Timestamp**: 2026-04-30T10:32:00Z
+**User Input**: "완료" (질문 답변 완료)
+**AI Response**: 답변 분석 완료. Q1:A(미완료 주문 시 차단), Q2:A(주문 없으면 차단), Q3:B(논리적 삭제), Q4:C(두 가지 날짜 필터 모두 지원), Q5:B(기존 테이블 업데이트), Q6:B(활성 세션 여부 추가). 모순 없음. Functional Design 산출물 생성 진행.
+**Context**: Functional Design - 질문 답변 수집 및 분석
+
+---
+
+## CONSTRUCTION - Functional Design (Unit 5) - Artifacts Generated
+**Timestamp**: 2026-04-30T10:35:00Z
+**AI Response**: Functional Design 산출물 3개 생성 완료: business-logic-model.md, business-rules.md, domain-entities.md
+**Context**: Functional Design - 산출물 생성 완료
+
+---
+
+## CONSTRUCTION - Functional Design Approval (Unit 5)
+**Timestamp**: 2026-04-30T10:38:00Z
+**User Input**: "승인"
+**AI Response**: Functional Design 승인 확인. NFR Requirements 단계 시작.
+**Context**: Functional Design - Unit 5 approved. Proceeding to NFR Requirements.
+
+---
+
+## CONSTRUCTION - NFR Requirements (Unit 5: table-management-domain)
+**Timestamp**: 2026-04-30T10:42:00Z
+**AI Response**: NFR Requirements 산출물 2개 생성 완료: nfr-requirements.md (Unit 1 상속 + Unit 5 특화 성능/보안/데이터 무결성/확장성/가용성/유지보수성), tech-stack-decisions.md (Unit 1 상속 + 인덱스 추가, 스키마 변경, 테스트 전략, 트랜잭션 설계). 사용자 승인 대기 중.
+**Context**: NFR Requirements - Unit 5 table-management-domain. All artifacts generated.
+
+---
+
+## CONSTRUCTION - NFR Requirements Approval (Unit 5)
+**Timestamp**: 2026-04-30T10:45:00Z
+**User Input**: "승인"
+**AI Response**: NFR Requirements 승인 확인. NFR Design 단계 시작.
+**Context**: NFR Requirements - Unit 5 approved. Proceeding to NFR Design.
+
+---
+
+## CONSTRUCTION - NFR Design (Unit 5: table-management-domain)
+**Timestamp**: 2026-04-30T10:50:00Z
+**AI Response**: NFR Design 산출물 2개 생성 완료: nfr-design-patterns.md (트랜잭션 패턴, 배치 처리, RBAC, 매장 격리, 논리적 삭제, JSON 직렬화, 복원력, 감사 로깅), logical-components.md (AdminTableController, TableSessionService 확장, OrderHistoryService, Repository 확장, DTO). 사용자 승인 대기 중.
+**Context**: NFR Design - Unit 5 table-management-domain. All artifacts generated.
+
+---
+
+## CONSTRUCTION - NFR Design Approval (Unit 5)
+**Timestamp**: 2026-04-30T10:55:00Z
+**User Input**: "승인"
+**AI Response**: NFR Design 승인 확인. Code Generation 단계 시작.
+**Context**: NFR Design - Unit 5 approved. Proceeding to Code Generation.
+
+---
+
+## CONSTRUCTION - Code Generation Plan (Unit 5: table-management-domain)
+**Timestamp**: 2026-04-30T11:00:00Z
+**AI Response**: Code Generation Plan 생성 완료. 12개 Step (엔티티 수정, 스키마 수정, DTO 수정/추가, Repository 5개, Service 3개, Controller 1개, 단위 테스트 5개, 요약 문서). 사용자 승인 대기 중.
+**Context**: Code Generation - Part 1 Planning. Plan created. Awaiting user approval.
+
+---
+
+## CONSTRUCTION - Code Generation Plan Approval (Unit 5)
+**Timestamp**: 2026-04-30T11:05:00Z
+**User Input**: "승인"
+**AI Response**: Code Generation Plan 승인 확인. Part 2 Generation 시작.
+**Context**: Code Generation - Unit 5 plan approved. Starting code generation.
+
+---
+
+## CONSTRUCTION - Code Generation Complete (Unit 5: table-management-domain)
+**Timestamp**: 2026-04-30T11:20:00Z
+**AI Response**: Unit 5 코드 생성 완료. 수정 5개 파일 + 생성 14개 파일 (DTO 1, Repository 5, Service 3, Controller 1, 테스트 5, 요약 1). 모든 Plan 체크박스 [x] 완료. 사용자 승인 대기 중.
+**Context**: Code Generation - Unit 5 table-management-domain. All steps completed.
+
+---
+
+## CONSTRUCTION - Code Generation Approval (Unit 5)
+**Timestamp**: 2026-04-30T11:25:00Z
+**User Input**: "승인"
+**AI Response**: Code Generation 승인 확인. Unit 5 (table-management-domain) Construction Phase 완료.
+**Context**: Code Generation - Unit 5 approved. Unit 5 construction complete.
+
+---
