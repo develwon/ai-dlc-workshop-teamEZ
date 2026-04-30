@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#B71C1C" rx="12"/>
+  <rect x="170" y="50" width="60" height="150" rx="8" fill="#D32F2F"/>
+  <rect x="165" y="70" width="70" height="110" rx="10" fill="#E53935"/>
+  <rect x="175" y="95" width="50" height="30" rx="4" fill="#FFF" opacity="0.9"/>
+  <circle cx="200" cy="230" r="30" fill="#1B5E20"/>
+  <circle cx="200" cy="230" r="22" fill="#2E7D32"/>
+  <circle cx="195" cy="225" r="5" fill="#FFF" opacity="0.4"/>
+  <text x="200" y="110" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#B71C1C">Cola</text>
+  <text x="200" y="250" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="bold" fill="white">콜라</text>
+  <text x="200" y="280" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#FFCDD2">2,000원</text>
+</svg>

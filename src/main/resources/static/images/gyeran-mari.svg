@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#FFC107" rx="12"/>
+  <rect x="120" y="80" width="160" height="100" rx="10" fill="#FFE082"/>
+  <rect x="130" y="90" width="140" height="80" rx="8" fill="#FFECB3"/>
+  <line x1="130" y1="110" x2="270" y2="110" stroke="#FFC107" stroke-width="2"/>
+  <line x1="130" y1="130" x2="270" y2="130" stroke="#FFC107" stroke-width="2"/>
+  <line x1="130" y1="150" x2="270" y2="150" stroke="#FFC107" stroke-width="2"/>
+  <circle cx="160" cy="120" r="4" fill="#4CAF50" opacity="0.6"/>
+  <circle cx="240" cy="140" r="3" fill="#FF5722" opacity="0.5"/>
+  <text x="200" y="250" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="bold" fill="#3E2723">계란말이</text>
+  <text x="200" y="280" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#5D4037">7,000원</text>
+</svg>
