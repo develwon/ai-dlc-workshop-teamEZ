@@ -16,7 +16,7 @@ async function loadTables() {
         }
 
         grid.innerHTML = tables.map(table => `
-            <div class="table-card" data-table-id="${table.id}">
+            <div class="table-card" data-table-id="${table.tableId}">
                 <div class="table-card-header">
                     <span class="table-num">테이블 ${table.tableNumber}</span>
                     <span class="table-session-status ${table.hasActiveSession ? 'session-active' : 'session-inactive'}">
@@ -28,9 +28,9 @@ async function loadTables() {
                 </div>
                 <div class="table-card-actions">
                     ${table.hasActiveSession ? `
-                        <button class="btn btn-warning btn-sm" data-action="complete" data-table-id="${table.id}">이용 완료</button>
+                        <button class="btn btn-warning btn-sm" data-action="complete" data-table-id="${table.tableId}">이용 완료</button>
                     ` : ''}
-                    <button class="btn btn-secondary btn-sm" data-action="history" data-table-id="${table.id}">과거 내역</button>
+                    <button class="btn btn-secondary btn-sm" data-action="history" data-table-id="${table.tableId}">과거 내역</button>
                 </div>
             </div>
         `).join('');

@@ -4,8 +4,8 @@ server:
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/tableorder
-    username: ${DB_USERNAME:tableorder}
-    password: ${DB_PASSWORD:tableorder}
+    username: ${DB_USERNAME:choiwonhyeok}
+    password: ${DB_PASSWORD:}
     hikari:
       minimum-idle: 10
       maximum-pool-size: 30
@@ -34,7 +34,7 @@ spring:
       data-locations: classpath:data.sql
 
 jwt:
-  secret: ${JWT_SECRET:defaultSecretKeyForDevelopmentOnlyMustBeAtLeast256BitsLong!!}
+  secret: ${JWT_SECRET:dGFibGVvcmRlci1zZXJ2aWNlLWp3dC1zZWNyZXQta2V5LWZvci1kZXZlbG9wbWVudC1vbmx5LTI1Ng==}
   expiration: 57600000
 
 aws:
