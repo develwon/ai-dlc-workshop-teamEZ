@@ -128,6 +128,7 @@ function renderOrders(onOrderClick) {
         btn.addEventListener('click', async () => {
             try {
                 await api.updateOrderStatus(Number(btn.dataset.orderId), btn.dataset.status);
+                location.reload();
             } catch (err) {
                 alert(err.message);
             }
@@ -140,6 +141,7 @@ function renderOrders(onOrderClick) {
             if (!confirm('이 주문을 삭제하시겠습니까?')) return;
             try {
                 await api.deleteOrder(Number(btn.dataset.orderId));
+                location.reload();
             } catch (err) {
                 alert(err.message);
             }

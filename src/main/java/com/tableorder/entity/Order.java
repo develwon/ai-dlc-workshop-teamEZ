@@ -67,6 +67,9 @@ public class Order extends BaseEntity {
     }
 
     public void updateStatus(OrderStatus newStatus) {
+        if (this.status == newStatus) {
+            return; // 같은 상태면 무시
+        }
         if (!this.status.canTransitionTo(newStatus)) {
             throw new InvalidStateTransitionException(
                     String.format("주문 상태를 %s에서 %s로 변경할 수 없습니다.", this.status, newStatus));

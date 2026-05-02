@@ -41,7 +41,7 @@ async function loadTables() {
                 if (!confirm('이 테이블의 이용을 완료하시겠습니까?\n현재 주문이 과거 내역으로 이동됩니다.')) return;
                 try {
                     await api.completeTable(Number(btn.dataset.tableId));
-                    await loadTables();
+                    location.reload();
                 } catch (err) {
                     alert('이용 완료 실패: ' + err.message);
                 }

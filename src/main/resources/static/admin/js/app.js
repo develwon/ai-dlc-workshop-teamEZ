@@ -97,10 +97,16 @@ function setupModals() {
         document.getElementById('order-detail-modal').hidden = true;
     });
 
-    // 모달 배경 클릭으로 닫기
+    // 모달 배경 클릭으로 닫기 (드래그 시 오닫힘 방지)
     document.querySelectorAll('.modal').forEach(modal => {
+        let mouseDownTarget = null;
+        modal.addEventListener('mousedown', (e) => {
+            mouseDownTarget = e.target;
+        });
         modal.addEventListener('click', (e) => {
-            if (e.target === modal) modal.hidden = true;
+            if (e.target === modal && mouseDownTarget === modal) {
+                modal.hidden = true;
+            }
         });
     });
 }

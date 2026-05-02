@@ -1,7 +1,6 @@
 package com.tableorder.controller;
 
 import com.tableorder.dto.*;
-import com.tableorder.service.FileStorageService;
 import com.tableorder.service.MenuService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
@@ -11,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -22,7 +20,6 @@ import java.util.List;
 public class AdminMenuController {
 
     private final MenuService menuService;
-    private final FileStorageService fileStorageService;
 
     // ==================== 메뉴 ====================
 
@@ -39,54 +36,28 @@ public class AdminMenuController {
     @PostMapping("/menus")
     @PreAuthorize("hasAnyRole('OWNER', 'MANAGER')")
     public ResponseEntity<MenuResponse> createMenu(
-            @Valid @RequestPart("menu") CreateMenuRequest menuRequest,
-            @RequestPart(value = "image", required = false) MultipartFile image,
+            @Valid @RequestBody CreateMenuRequest menuRequest,
             HttpServletRequest request) {
 
         Long storeId = getStoreId(request);
+        String imageUrl = menuRequest.getImageUrl();
 
-        String imageUrl = null;
-        if (image != null && !image.isEmpty()) {
-            imageUrl = fileStorageService.uploadImage(storeId, image);
-        }
-
-        try {
-            MenuResponse menu = menuService.createMenu(storeId, menuRequest, imageUrl);
-            return ResponseEntity.status(HttpStatus.CREATED).body(menu);
-        } catch (Exception e) {
-            // 보상 트랜잭션: DB 저장 실패 시 업로드된 이미지 삭제
-            if (imageUrl != null) {
-                fileStorageService.deleteImage(imageUrl);
-            }
-            throw e;
-        }
+        MenuResponse menu = menuService.createMenu(storeId, menuRequest, imageUrl);
+        return ResponseEntity.status(HttpStatus.CREATED).body(menu);
     }
 
     @PutMapping("/menus/{menuId}")
     @PreAuthorize("hasAnyRole('OWNER', 'MANAGER')")
     public ResponseEntity<MenuResponse> updateMenu(
             @PathVariable Long menuId,
-            @Valid @RequestPart("menu") UpdateMenuRequest menuRequest,
-            @RequestPart(value = "image", required = false) MultipartFile image,
+            @Valid @RequestBody UpdateMenuRequest menuRequest,
             HttpServletRequest request) {
 
         Long storeId = getStoreId(request);
+        String newImageUrl = menuRequest.getImageUrl();
 
-        String newImageUrl = null;
-        if (image != null && !image.isEmpty()) {
-            newImageUrl = fileStorageService.uploadImage(storeId, image);
-        }
-
-        try {
-            MenuResponse menu = menuService.updateMenu(storeId, menuId, menuRequest, newImageUrl);
-            return ResponseEntity.ok(menu);
-        } catch (Exception e) {
-            // 보상 트랜잭션: DB 수정 실패 시 새로 업로드된 이미지 삭제
-            if (newImageUrl != null) {
-                fileStorageService.deleteImage(newImageUrl);
-            }
-            throw e;
-        }
+        MenuResponse menu = menuService.updateMenu(storeId, menuId, menuRequest, newImageUrl);
+        return ResponseEntity.ok(menu);
     }
 
     @DeleteMapping("/menus/{menuId}")

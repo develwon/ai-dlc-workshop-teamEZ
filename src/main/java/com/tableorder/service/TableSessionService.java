@@ -62,12 +62,6 @@ public class TableSessionService {
             throw new IllegalStateException("주문 내역이 없습니다.");
         }
 
-        boolean hasIncompleteOrders = orderRepository
-                .existsBySessionIdAndDeletedFalseAndStatusNot(session.getId(), OrderStatus.COMPLETED);
-        if (hasIncompleteOrders) {
-            throw new IllegalStateException("미완료 주문이 있습니다. 모든 주문을 완료 처리한 후 이용 완료해주세요.");
-        }
-
         orderHistoryService.archiveSessionOrders(tableId, session.getId(), storeId);
 
         orderRepository.softDeleteBySessionId(session.getId());

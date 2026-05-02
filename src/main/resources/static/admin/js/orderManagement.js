@@ -37,6 +37,7 @@ export async function showOrderDetail(orderId) {
                 try {
                     await api.updateOrderStatus(orderId, btn.dataset.status);
                     modal.hidden = true;
+                    location.reload();
                 } catch (err) {
                     alert(err.message);
                 }
@@ -51,6 +52,7 @@ export async function showOrderDetail(orderId) {
                 try {
                     await api.deleteOrder(orderId);
                     modal.hidden = true;
+                    location.reload();
                 } catch (err) {
                     alert(err.message);
                 }
